@@ -1,0 +1,16 @@
+{
+	"GearType": {
+		"WEAPON": "weapon",
+		"RING": "ring",
+		"EARRING": "earring",
+		"NECKLACE": "necklace",
+		"BRACELET": "bracelet",
+		"BELT": "belt",
+		"GLOVES": "gloves",
+		"SOUL": "soul",
+		"HEART": "heart",
+		"PET": "pet",
+		"SOULBADGE": "soulBadge",
+		"MYSTICBADGE": "mysticBadge"
+	}
+}

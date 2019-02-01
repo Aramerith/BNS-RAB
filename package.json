@@ -4,9 +4,20 @@
   "description": "Blade & Soul Raid Assignment Bot",
   "main": "index.js",
   "dependencies": {
+    "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",
     "dom-parser": "^0.1.5",
-    "node-fetch": "^2.3.0"
+    "erlpack": "^0.1.2",
+    "eslint": "^5.11.1",
+    "libsodium-wrappers": "^0.7.3",
+    "node-fetch": "^2.3.0",
+    "node-opus": "^0.3.1",
+    "opusscript": "0.0.6",
+    "sequelize": "^4.42.0",
+    "sodium": "^3.0.2",
+    "sqlite3": "^4.0.4",
+    "uws": "^99.0.0",
+    "whatwg-url": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {
