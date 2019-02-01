@@ -15,7 +15,7 @@
     "opusscript": "0.0.6",
     "sequelize": "^4.42.0",
     "sodium": "^3.0.2",
-    "sqlite3": "^4.0.4",
+    "sqlite3": "^4.0.6",
     "uws": "^99.0.0",
     "whatwg-url": "^7.0.0"
   },
