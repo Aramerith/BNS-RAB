@@ -24,6 +24,7 @@ module.exports = {
 				${ITUtil.getTierNameStageStr(GearType.RING, raid.ring)} ring
 				${ITUtil.getTierNameStageStr(GearType.EARRING, raid.earring)} earring
 				${ITUtil.getTierNameStageStr(GearType.NECKLACE, raid.necklace)} necklace
+				${ITUtil.getTierNameStageStr(GearType.BRACELET, raid.bracelet)} bracelet
 				${ITUtil.getTierNameStageStr(GearType.BELT, raid.belt)} belt
 				${ITUtil.getTierNameStageStr(GearType.GLOVES, raid.gloves)} gloves
 				${ITUtil.getTierNameStageStr(GearType.SOUL, raid.soul)} soul
