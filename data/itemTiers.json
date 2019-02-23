@@ -43,7 +43,8 @@
 		],
 		"gloves": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "King", "hasStages": true, "tierLevel": 1, "maxStage": 13}
+			{"name": "King", "hasStages": true, "tierLevel": 1, "maxStage": 13},
+			{"name": "Skyreach", "hasStages": true, "tierLevel": 2, "maxStage": 13}
 		],
 		"soul": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
