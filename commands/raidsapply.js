@@ -20,19 +20,22 @@ module.exports = {
 			if (settings != null) {
 				if (settings.dataValues.applicationschannelid != null) {
 					const channel = message.guild.channels.get(settings.dataValues.applicationschannelid);
-					if (args.length < 2) {
+					const region = args[0];
+					args.shift();
+					const charName = args.join(' ');
+					if (args.length < 1) {
 						return message.reply('Please provide both server region and character name.');
 					}
-					if (regions.indexOf(args[0].toLowerCase()) < 0) {
-						return message.reply(`**${args[0]}** is not a valid option. Use [na/eu] only.`);
+					if (regions.indexOf(region.toLowerCase()) < 0) {
+						return message.reply(`**${region}** is not a valid option. Use [na/eu] only.`);
 					}
-					fetch(new URL(`http://${args[0].toLowerCase()}-bns.ncsoft.com/ingame/bs/character/data/equipments?c=${args[1]}`))
+					fetch(new URL(`http://${region.toLowerCase()}-bns.ncsoft.com/ingame/bs/character/data/equipments?c=${charName}`))
 						.then(res => res.text())
 						.then(body => {
 							const check = parser.parseFromString(body);
 							if (check.getElementById('equipResult').textContent != 'success') return message.channel.send('Character with that name not found in this region!');
 							const gear = new Gear(body);
-							const gearComparer = new GearCompare(gear, message.guild.id, channel, args[1], message.member);
+							const gearComparer = new GearCompare(gear, message.guild.id, channel, charName, message.member);
 							gearComparer.applyToRaids();
 						});
 				}

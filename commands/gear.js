@@ -13,13 +13,16 @@ module.exports = {
 	cooldown: 5,
 	usage: '<region> <character name>',
 	execute(message, args) {
-		if (args.length < 2) {
+		const region = args[0];
+		args.shift();
+		const charName = args.join(' ');
+		if (args.length < 1) {
 			return message.reply('Please provide both server region and character name.');
 		}
-		if (regions.indexOf(args[0].toLowerCase()) < 0) {
-			return message.reply(`**${args[0]}** is not a valid option. Use [na/eu] only.`);
+		if (regions.indexOf(region.toLowerCase()) < 0) {
+			return message.reply(`**${region}** is not a valid option. Use [na/eu] only.`);
 		}
-		fetch(new URL(`http://${args[0].toLowerCase()}-bns.ncsoft.com/ingame/bs/character/data/equipments?c=${args[1]}`))
+		fetch(new URL(`http://${region.toLowerCase()}-bns.ncsoft.com/ingame/bs/character/data/equipments?c=${charName}`))
 			.then(res => res.text())
 			.then(body => {
 				const check = parser.parseFromString(body);
@@ -33,13 +36,19 @@ module.exports = {
 				}
 				const gearEmbed = new Discord.RichEmbed()
 					.setColor('#880088')
-					.setTitle(`${args[1]} - ${args[0].toUpperCase()}`)
-					.setDescription(desc);
-				fetch(new URL(`http://${args[0]}-bns.ncsoft.com/ingame/bs/character/profile?c=${args[1]}`))
+					.setTitle(`${charName} - ${region.toUpperCase()}`)
+					.addField('Equipment', desc);
+				fetch(new URL(`http://${region}-bns.ncsoft.com/ingame/bs/character/profile?c=${charName}`))
 					.then(res => res.text())
 					.then(bodyProfile => {
 						const dom = parser.parseFromString(bodyProfile);
-						gearEmbed.setThumbnail(dom.getElementsByClassName('charaterView')[0].childNodes[1].getAttribute('src'));
+						const pfp = dom.getElementsByClassName('charaterView')[0].childNodes[1].getAttribute('src');
+						const igDescBody = dom.getElementsByClassName('desc')[0].childNodes[1];
+						const igClass = igDescBody.childNodes[1].textContent;
+						let igLevel = igDescBody.childNodes[3].textContent;
+						igLevel = igLevel.replace('&bull;', '•');
+						gearEmbed.setThumbnail(pfp);
+						gearEmbed.setDescription(`_${igClass} | ${igLevel}_.`);
 						return message.channel.send(gearEmbed);
 					});
 			});
