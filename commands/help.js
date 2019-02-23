@@ -1,4 +1,4 @@
-const { prefix } = require('../config.json');
+const { Settings } = require('../modules/dbObjects');
 
 module.exports = {
 	name: 'help',
@@ -10,6 +10,20 @@ module.exports = {
 	execute(message, args) {
 		const data = [];
 		const { commands } = message.client;
+
+		let prefix = '$';
+		if (message.guild !== null) {
+			Settings.findOne({ where: { guildID: message.guild.id } }).then(settings => {
+				if (settings == null) {
+					Settings.upsert({ guildID: message.guild.id }).catch((error) => {
+						console.log(error);
+					});
+				}
+				else {
+					prefix = settings.dataValues.commandprefix;
+				}
+			});
+		}
 
 		if (!args.length) {
 			data.push('Here\'s a list of all my commands:');
