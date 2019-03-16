@@ -16,5 +16,6 @@ module.exports = class Gear {
 		this.pet = GU.getPet();
 		this.soulBadge = GU.getSoulBadge();
 		this.mysticBadge = GU.getMysticBadge();
+		this.nova = GU.getTalisman();
 	}
 };

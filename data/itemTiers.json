@@ -13,21 +13,21 @@
 		"ring": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Inheritor's", "hasStages": true, "tierLevel": 1, "maxStage": 13},
-			{"name": "BT", "fullName": "Lodestar/Ignitor/Dragonstorm/Frostfall/Tremor/Penumbra", "hasStages": true, "tierLevel": 2, "maxStage": 13},
+			{"name": "Skybreak", "hasStages": true, "tierLevel": 2, "maxStage": 13},
 			{"name": "Myth", "hasStages": true, "tierLevel": 3, "maxStage": 13},
-			{"name": "TT", "fullName": "Peacekeeper/Stinger/Shield Bearer's", "hasStages": true, "tierLevel": 4, "maxStage": 13}
+			{"name": "Celestial Emperor", "hasStages": true, "tierLevel": 4, "maxStage": 13}
 		],
 		"earring": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Apex", "hasStages": true, "tierLevel": 1, "maxStage": 13},
-			{"name": "BT", "fullName": "Supernova/Dragonsong/Igneous/Seismic/Permafrost/Phantasm", "hasStages": true, "tierLevel": 2, "maxStage": 13},
+			{"name": "Skybreak", "hasStages": true, "tierLevel": 2, "maxStage": 13},
 			{"name": "Storm Regent", "hasStages": true, "tierLevel": 3, "maxStage": 13},
-			{"name": "TT", "fullName": "Peacekeeper/Stinger/Shield Bearer's", "hasStages": true, "tierLevel": 4, "maxStage": 13}
+			{"name": "Celestial Emperor", "hasStages": true, "tierLevel": 4, "maxStage": 13}
 		],
 		"necklace": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Elevation", "hasStages": true, "tierLevel": 1, "maxStage": 13},
-			{"name": "VT", "fullName": "Nightfrost/Dragonbane/Scoria/Stormpulse/Windborn/Realmbreaker", "hasStages": true, "tierLevel": 2, "maxStage": 13},
+			{"name": "Darkstorm", "hasStages": true, "tierLevel": 2, "maxStage": 13},
 			{"name": "Prophecy", "hasStages": true, "tierLevel": 3, "maxStage": 13}
 		],
 		"bracelet": [
@@ -71,7 +71,7 @@
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Hongmoon", "hasStages": true, "tierLevel": 1, "maxStage": 10},
 			{"name": "Awakened Gusty/Awakened Loyal/Awakened Furious", "hasStages": false, "tierLevel": 2},
-			{"name": "Unleashed Hongmoon", "fullName": "Unleashed Hongmoon/Unleashed Stormbringer Hongmoon", "hasStages": false, "tierLevel": 3},
+			{"name": "Unleashed Hongmoon", "fullName": "Unleashed Hongmoon/Unleashed Stormbringer Hongmoon/Unleashed Hongmoon Vindicator", "hasStages": false, "tierLevel": 3},
 			{"name": "Ultimate", "hasStages": true, "tierLevel": 4, "maxStage": 5},
 			{"name": "Awakened Ultimate", "hasStages": true, "tierLevel": 5, "maxStage": 3},
 			{"name": "Unleashed Ultimate", "hasStages": false, "tierLevel": 6},
@@ -86,6 +86,18 @@
 		"mysticBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Dynasty/Aransu", "hasStages": true, "tierLevel": 1, "maxStage": 8}
+		],
+		"nova": [
+			{"name": "Any", "hasStages": false, "tierLevel": 0},
+			{"name": "Hongmoon", "hasStages": true, "tierLevel": 1, "maxStage": 5},
+			{"name": "Awakened Hongmoon", "hasStages": true, "tierLevel": 2, "maxStage": 5},
+			{"name": "True Hongmoon", "hasStages": false, "tierLevel": 3},
+			{"name": "Wyvern", "hasStages": true, "tierLevel": 4, "maxStage": 5},
+			{"name": "Awakened Wyvern", "hasStages": true, "tierLevel": 5, "maxStage": 5},
+			{"name": "True Wyvern", "hasStages": false, "tierLevel": 6},
+			{"name": "Thunder", "hasStages": true, "tierLevel": 7, "maxStage": 5},
+			{"name": "Awakened Thunder", "hasStages": true, "tierLevel": 8, "maxStage": 5},
+			{"name": "True Thunder", "hasStages": false, "tierLevel": 9}
 		]
 	}
 }

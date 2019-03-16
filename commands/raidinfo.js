@@ -31,7 +31,8 @@ module.exports = {
 				${ITUtil.getTierNameStageStr(GearType.HEART, raid.heart)} heart
 				${ITUtil.getTierNameStageStr(GearType.PET, raid.pet)} pet
 				${ITUtil.getTierNameStageStr(GearType.SOULBADGE, raid.soulBadge)} soul badge
-				${ITUtil.getTierNameStageStr(GearType.MYSTICBADGE, raid.mysticBadge)} mystic badge`)
+				${ITUtil.getTierNameStageStr(GearType.MYSTICBADGE, raid.mysticBadge)} mystic badge
+				${ITUtil.getTierNameStageStr(GearType.TALISMAN, raid.nova)} talisman`)
 			);
 		})
 			.catch(() => message.channel.send('No raid with that name found'));

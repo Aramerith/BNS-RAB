@@ -17,6 +17,7 @@ module.exports = class ModifyRaidHandler {
 		}
 		this.isSaved = saved;
 		this.raidErr = 'Selected option is not a valid choice. Raid creation canceled.';
+		this.raidErrSaved = 'Selected option is not a valid choice. Command canceled.';
 		this.raidErrCatch = err => {
 			this.raidData = {};
 			return message.channel.send((typeof err == 'string') ? err : 'You did not enter any input! New raid creation canceled.');
@@ -58,7 +59,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgWeapon => {
-				if(this.inputCheck(GearType.WEAPON, msgWeapon.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.WEAPON, msgWeapon.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgWeapon.first()) : this.selectRing(msgWeapon.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -74,7 +75,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgRing => {
-				if (this.inputCheck(GearType.RING, msgRing.first())) return msg.channel.send(this.raidErr);
+				if (this.inputCheck(GearType.RING, msgRing.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgRing.first()) : this.selectEarring(msgRing.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -90,7 +91,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgEarring => {
-				if(this.inputCheck(GearType.EARRING, msgEarring.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.EARRING, msgEarring.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgEarring.first()) : this.selectNecklace(msgEarring.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -106,7 +107,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgNecklace => {
-				if(this.inputCheck(GearType.NECKLACE, msgNecklace.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.NECKLACE, msgNecklace.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgNecklace.first()) : this.selectBracelet(msgNecklace.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -122,7 +123,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgBracelet => {
-				if(this.inputCheck(GearType.BRACELET, msgBracelet.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.BRACELET, msgBracelet.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgBracelet.first()) : this.selectBelt(msgBracelet.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -138,7 +139,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgBelt => {
-				if(this.inputCheck(GearType.BELT, msgBelt.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.BELT, msgBelt.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgBelt.first()) : this.selectGloves(msgBelt.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -154,7 +155,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgGloves => {
-				if(this.inputCheck(GearType.GLOVES, msgGloves.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.GLOVES, msgGloves.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgGloves.first()) : this.selectSoul(msgGloves.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -166,7 +167,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgSoul => {
-				if(this.inputCheck(GearType.SOUL, msgSoul.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.SOUL, msgSoul.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgSoul.first()) : this.selectHeart(msgSoul.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -178,7 +179,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgHeart => {
-				if(this.inputCheck(GearType.HEART, msgHeart.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.HEART, msgHeart.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgHeart.first()) : this.selectPet(msgHeart.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -190,7 +191,7 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgPet => {
-				if(this.inputCheck(GearType.PET, msgPet.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.PET, msgPet.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgPet.first()) : this.selectSoulBadge(msgPet.first());
 			}).catch(this.raidErrCatch);
 	}
@@ -202,20 +203,32 @@ module.exports = class ModifyRaidHandler {
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgSoulBadge => {
-				if(this.inputCheck(GearType.SOULBADGE, msgSoulBadge.first())) return msg.channel.send(this.raidErr);
+				if(this.inputCheck(GearType.SOULBADGE, msgSoulBadge.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
 				(edit) ? this.confirmRaid(msgSoulBadge.first()) : this.selectMysticBadge(msgSoulBadge.first());
 			}).catch(this.raidErrCatch);
 	}
 
 	selectMysticBadge(msg, edit = false) {
 		msg.channel.send(this.generateEmbedSelect(
-			(edit) ? 'Select new mystic badge requirement.' : `${ITUtil.getTierNameStageStr(GearType.SOULBADGE, this.raidData.soulBadge)} selected. And finally mystic badge.`,
+			(edit) ? 'Select new mystic badge requirement.' : `${ITUtil.getTierNameStageStr(GearType.SOULBADGE, this.raidData.soulBadge)} selected. Now mystic badge.`,
 			GearType.MYSTICBADGE
 		));
 		msg.channel.awaitMessages(this.filter, this.amParams)
 			.then(msgMysticBadge => {
-				if (this.inputCheck(GearType.MYSTICBADGE, msgMysticBadge.first())) return msg.channel.send(this.raidErr);
-				this.confirmRaid(msgMysticBadge.first());
+				if (this.inputCheck(GearType.MYSTICBADGE, msgMysticBadge.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
+				(edit) ? this.confirmRaid(msgMysticBadge.first()) : this.selectTalisman(msgMysticBadge.first());
+			}).catch(this.raidErrCatch);
+	}
+
+	selectTalisman(msg, edit = false) {
+		msg.channel.send(this.generateEmbedSelect(
+			(edit) ? 'Select new talisman requirement' : `${ITUtil.getTierNameStageStr(GearType.MYSTICBADGE, this.raidData.mysticBadge)} selected. And finally a talisman.`,
+			GearType.TALISMAN
+		));
+		msg.channel.awaitMessages(this.filter, this.amParams)
+			.then(msgTalisman => {
+				if (this.inputCheck(GearType.TALISMAN, msgTalisman.first())) return msg.channel.send((this.isSaved) ? this.raidErrSaved : this.raidErr);
+				this.confirmRaid(msgTalisman.first());
 			}).catch(this.raidErrCatch);
 	}
 
@@ -233,7 +246,10 @@ module.exports = class ModifyRaidHandler {
 			${ITUtil.getTierNameStageStr(GearType.HEART, this.raidData.heart)} heart
 			${ITUtil.getTierNameStageStr(GearType.PET, this.raidData.pet)} pet
 			${ITUtil.getTierNameStageStr(GearType.SOULBADGE, this.raidData.soulBadge)} soul badge
-			${ITUtil.getTierNameStageStr(GearType.MYSTICBADGE, this.raidData.mysticBadge)} mystic badge`);
+			${ITUtil.getTierNameStageStr(GearType.MYSTICBADGE, this.raidData.mysticBadge)} mystic badge
+			${ITUtil.getTierNameStageStr(GearType.TALISMAN, this.raidData.nova)} talisman`)
+			.addBlankField()
+			.setFooter(`${this.raidData.name} raid. Status - ${(this.isSaved) ? 'saved' : 'unsaved'}.`);
 		msg.channel.send(confirmEmbed);
 
 		this.confirmPrompt(msg);
@@ -264,7 +280,7 @@ module.exports = class ModifyRaidHandler {
 		const editableChoices = new Discord.RichEmbed()
 			.setColor('#edd449')
 			.setDescription('What do you want to change?')
-			.addField('List of Options', '0 - Name\n1 - Weapon\n2 - Ring\n3 - Earring\n4 - Necklace\n5 - Belt\n6 - Gloves\n7 - Soul\n8 - Heart\n9 - Pet\n10 - Soul Badge\n11 - Mystic Badge')
+			.addField('List of Options', '0 - Name\n1 - Weapon\n2 - Ring\n3 - Earring\n4 - Necklace\n5 - Belt\n6 - Gloves\n7 - Soul\n8 - Heart\n9 - Pet\n10 - Soul Badge\n11 - Mystic Badge\n12 - Talisman')
 			.addBlankField()
 			.setFooter(`${this.raidData.name} raid. Status - ${(this.isSaved) ? 'saved' : 'unsaved'}.`);
 		msg.channel.send(editableChoices);
@@ -308,7 +324,10 @@ module.exports = class ModifyRaidHandler {
 					this.selectSoulBadge(msgc, true);
 					break;
 				case 11:
-					this.selectSoul(msgc, true);
+					this.selectMysticBadge(msgc, true);
+					break;
+				case 12:
+					this.selectTalisman(msgc, true);
 					break;
 				default:
 					msgc.channel.send('Invalid option selected. Command canceled.');

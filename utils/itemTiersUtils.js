@@ -56,6 +56,7 @@ module.exports = class ItemTierUtil {
 		if (userItem == undefined) return '0';
 		if (type == GearType.SOUL && userItem == 'Stormbringer Soul') return '1 5';
 		if (type == GearType.PET && userItem == 'Stormbringer Pet Aura') return '1 5';
+		if (type == GearType.TALISMAN && userItem == 'Eternal Hongmoon') return '1 1';
 		for (let i = this.itemTiers[type].length - 1; i > 0; i--) {
 			const strvals = this.itemTiers[type][i].fullName ? this.itemTiers[type][i].fullName.split('/') : this.itemTiers[type][i].name.split('/');
 			for (let j = 0; j < strvals.length; j++) {

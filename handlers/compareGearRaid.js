@@ -43,16 +43,23 @@ module.exports = class GearCompare {
 				const uvals = this.ugearTiered[GearType[prop]].split(' ');
 				const rvals = raid[GearType[prop]].split(' ');
 				if (parseInt(uvals[0]) < parseInt(rvals[0])) {
-					missingReqs.push(`Missing ${GearType[prop]} requirement.\n**Need**: ${ITUtil.getTierNameStageStr(GearType[prop], raid[GearType[prop]])}; **Got**: ${this.ugear[GearType[prop]] ? this.ugear[GearType[prop]] : 'None'}.\n`);
+					missingReqs.push(`Missing ${this.displayGearTypeByProp(prop)} requirement.\n**Need**: ${ITUtil.getTierNameStageStr(GearType[prop], raid[GearType[prop]])}; **Got**: ${this.ugear[GearType[prop]] ? this.ugear[GearType[prop]] : 'None'}.\n`);
 				}
 				if (rvals.length == 2 && parseInt(uvals[0]) == parseInt(rvals[0])) {
 					if ((parseInt(uvals[1]) < parseInt(rvals[1])) || (uvals.length == 1)) {
-						missingReqs.push(`Missing ${GearType[prop]} requirement.\n**Need**: ${ITUtil.getTierNameStageStr(GearType[prop], raid[GearType[prop]])}; **Got**: ${this.ugear[GearType[prop]] ? this.ugear[GearType[prop]] : 'None'}.\n`);
+						missingReqs.push(`Missing ${this.displayGearTypeByProp(prop)} requirement.\n**Need**: ${ITUtil.getTierNameStageStr(GearType[prop], raid[GearType[prop]])}; **Got**: ${this.ugear[GearType[prop]] ? this.ugear[GearType[prop]] : 'None'}.\n`);
 					}
 				}
 			}
 		}
 		this.displayResult(missingReqs, raid);
+	}
+
+	displayGearTypeByProp(prop) {
+		if (prop == 'SOULBADGE') return 'soul badge';
+		if (prop == 'MYSTICBADGE') return 'mystic badge';
+		if (prop == 'TALISMAN') return 'talisman';
+		return GearType[prop];
 	}
 
 	displayResult(missingReqs, raid) {

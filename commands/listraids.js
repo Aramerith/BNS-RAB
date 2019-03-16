@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'listraids',
 	description: 'Retrieves the list of current raids in this server.',
+	aliases: ['raidslist', 'raidlist'],
 	args: false,
 	cooldown: 5,
 	guildOnly : true,

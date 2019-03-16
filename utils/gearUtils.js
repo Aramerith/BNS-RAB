@@ -54,6 +54,10 @@ module.exports = class GearUtil {
 		return this.baseCall('wrapAccessory rune');
 	}
 
+	getTalisman() {
+		return this.baseCall('wrapAccessory nova');
+	}
+
 	baseCall(className) {
 		try {
 			return this.dom.getElementsByClassName(className)[0].getElementsByClassName('name')[0].childNodes[1].textContent;

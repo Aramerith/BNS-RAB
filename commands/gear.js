@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const regions = ['na', 'eu'];
 const fetch = require('node-fetch');
 const Gear = require('../modules/gearFetch.js');
+const Stats = require('../modules/statsFetch.js');
 const DomParser = require('dom-parser');
 const { URL } = require('url');
 const parser = new DomParser();
@@ -47,8 +48,10 @@ module.exports = {
 						const igClass = igDescBody.childNodes[1].textContent;
 						let igLevel = igDescBody.childNodes[3].textContent;
 						igLevel = igLevel.replace('&bull;', '•');
+						const stats = new Stats(body);
 						gearEmbed.setThumbnail(pfp);
 						gearEmbed.setDescription(`_${igClass} | ${igLevel}_.`);
+						stats.listStats(gearEmbed);
 						return message.channel.send(gearEmbed);
 					});
 			});
