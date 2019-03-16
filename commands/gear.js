@@ -48,11 +48,15 @@ module.exports = {
 						const igClass = igDescBody.childNodes[1].textContent;
 						let igLevel = igDescBody.childNodes[3].textContent;
 						igLevel = igLevel.replace('&bull;', '•');
-						const stats = new Stats(body);
 						gearEmbed.setThumbnail(pfp);
 						gearEmbed.setDescription(`_${igClass} | ${igLevel}_.`);
-						stats.listStats(gearEmbed);
-						return message.channel.send(gearEmbed);
+						fetch(new URL(`http://${region}-bns.ncsoft.com/ingame/bs/character/data/abilities.json?c=${charName}`))
+							.then(res => res.json())
+							.then(statsJson => {
+								const stats = new Stats(statsJson);
+								stats.listStats(gearEmbed);
+								return message.channel.send(gearEmbed);
+							});
 					});
 			});
 	},
