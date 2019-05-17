@@ -28,7 +28,8 @@
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Elevation", "hasStages": true, "tierLevel": 1, "maxStage": 13},
 			{"name": "Darkstorm", "hasStages": true, "tierLevel": 2, "maxStage": 13},
-			{"name": "Prophecy", "hasStages": true, "tierLevel": 3, "maxStage": 13}
+			{"name": "Thornbreaker", "hasStages": true, "tierLevel": 3, "maxStage": 13},
+			{"name": "Prophecy", "hasStages": true, "tierLevel": 4, "maxStage": 13}
 		],
 		"bracelet": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
