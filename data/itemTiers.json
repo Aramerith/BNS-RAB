@@ -38,7 +38,7 @@
 		],
 		"belt": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Eternity", "hasStages": true, "tierLevel": 1, "maxStage": 13},
+			{"name": "Eternity", "hasStages": false, "tierLevel": 1},
 			{"name": "Skybreaker", "hasStages": true, "tierLevel": 2, "maxStage": 13},
 			{"name": "Horizon", "hasStages": true, "tierLevel": 3, "maxStage": 13}
 		],
