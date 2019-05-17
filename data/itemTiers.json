@@ -89,7 +89,8 @@
 		],
 		"mysticBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Dynasty/Aransu", "hasStages": true, "tierLevel": 1, "maxStage": 8}
+			{"name": "Dynasty/Aransu", "hasStages": true, "tierLevel": 1, "maxStage": 8},
+			{"name": "Thornbreaker/Groundbreaker", "hasStages": true, "tierLevel": 2, "maxStage": 8}
 		],
 		"nova": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
