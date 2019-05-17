@@ -65,7 +65,10 @@
 			{"name": "True Hongmoon", "hasStages": false, "tierLevel": 3},
 			{"name": "Virtuous", "hasStages": true, "tierLevel": 4, "maxStage": 5},
 			{"name": "Awakened Virtuous", "hasStages": true, "tierLevel": 5, "maxStage": 3},
-			{"name": "True Virtuous", "hasStages": false, "tierLevel": 6}
+			{"name": "True Virtuous", "hasStages": false, "tierLevel": 6},
+			{"name": "Champion's", "hasStages": true, "maxStage": 5, "tierLevel": 7},
+			{"name": "Awakened Champion's", "hasStages": true, "maxStage": 3, "tierLevel": 8},
+			{"name": "True Champion's", "hasStages": false, "tierLevel": 9}
 		],
 		"pet": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
@@ -81,7 +84,7 @@
 		],
 		"soulBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Fused", "fullName": "Ancestral/Undying/Legacy/Eon/Limitless/Invincible/Arcana/Colossus", "hasStages": true, "tierLevel": 1, "maxStage": 8}
+			{"name": "Fused", "fullName": "Ancestral/Undying/Legacy/Eon/Limitless/Invincible/Arcana/Colossus/Wildborne/War Song", "hasStages": true, "tierLevel": 1, "maxStage": 8}
 		],
 		"mysticBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
