@@ -85,7 +85,8 @@ module.exports = class GearCompare {
 			displayResult.addField(raid.name, successText);
 		}
 		else {
-			displayResult.addField(raid.name, missingReqs.join('\n'));
+			displayResult.setTitle(raid.name)
+				.setDescription(missingReqs.join('\n'));
 		}
 		displayResult.setFooter(`Raid application from ${this.characterName}`);
 		this.channel.send(displayResult);
