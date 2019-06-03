@@ -29,7 +29,7 @@ module.exports = class StatUtil {
 	}
 
 	getPvPDefense() {
-		return `${this.data.pc_defend_power_value} (${this.data.pc_defend_power_rate}%)`
+		return `${this.data.pc_defend_power_value} (${this.data.pc_defend_power_rate}%)`;
 	}
 
 	getBossDefense() {
