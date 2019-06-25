@@ -35,7 +35,7 @@ module.exports = {
 							const check = parser.parseFromString(body);
 							if (check.getElementById('equipResult').textContent != 'success') return message.channel.send('Character with that name not found in this region!');
 							const gear = new Gear(body);
-							const gearComparer = new GearCompare(gear, message.guild.id, channel, charName, message.member);
+							const gearComparer = new GearCompare(gear, message.guild.id, channel, charName, message.member, false);
 							gearComparer.applyToRaids();
 						});
 				}

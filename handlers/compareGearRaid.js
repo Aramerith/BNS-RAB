@@ -6,13 +6,14 @@ const Discord = require('discord.js');
 const ITUtil = new ItemTierUtils(itemTiers);
 
 module.exports = class GearCompare {
-	constructor(ugear, guildID, channel, character, member) {
+	constructor(ugear, guildID, channel, character, member, isDm) {
 		this.ugear = ugear;
 		this.guildID = guildID;
 		this.characterName = character;
 		this.channel = channel;
 		this.member = member;
 		this.ugearTiered = {};
+		this.isDm = isDm;
 	}
 
 	applyToRaids() {
@@ -66,21 +67,23 @@ module.exports = class GearCompare {
 		const displayResult = new Discord.RichEmbed().setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
 		if (missingReqs.length == 0) {
 			let successText = 'All requirements met.';
-			const raidRole = this.channel.guild.roles.find(role => role.name === `${raid.name} Ready`);
-			if (!raidRole) {
-				this.channel.guild.createRole({
-					name: `${raid.name} Ready`,
-					color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-				}).then(role => {
-					if (!this.member.roles.has(role.id)) {
-						this.member.addRole(role.id).catch(error => console.log(error));
-						successText = 'All requirements met. You have been assigned a new role.';
-					}
-				});
-			}
-			else if (!this.member.roles.has(raidRole.id)) {
-				this.member.addRole(raidRole.id).catch(error => console.log(error));
-				successText = 'All requirements met. You have been assigned a new role.';
+			if (!this.isDm) {
+				const raidRole = this.channel.guild.roles.find(role => role.name === `${raid.name} Ready`);
+				if (!raidRole) {
+					this.channel.guild.createRole({
+						name: `${raid.name} Ready`,
+						color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+					}).then(role => {
+						if (!this.member.roles.has(role.id)) {
+							this.member.addRole(role.id).catch(error => console.log(error));
+							successText = 'All requirements met. You have been assigned a new role.';
+						}
+					});
+				}
+				else if (!this.member.roles.has(raidRole.id)) {
+					this.member.addRole(raidRole.id).catch(error => console.log(error));
+					successText = 'All requirements met. You have been assigned a new role.';
+				}
 			}
 			displayResult.addField(raid.name, successText);
 		}

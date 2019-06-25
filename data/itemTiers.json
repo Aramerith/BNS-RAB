@@ -2,13 +2,13 @@
 	"itemTiers": {
 		"weapon": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Baleful/Seraph", "hasStages": true, "tierLevel": 1, "maxStage": 12},
-			{"name": "Dawnforged/Riftwalk", "hasStages": true, "tierLevel": 2, "maxStage": 9},
-			{"name": "Raven", "hasStages": true, "tierLevel": 3, "maxStage": 9},
-			{"name": "Storm Dragon/Exalted", "hasStages": true, "tierLevel": 4, "maxStage": 9},
-			{"name": "Aransu", "hasStages": true, "tierLevel": 5, "maxStage": 9},
-			{"name": "Skyforge/Shadowforge", "hasStages": true, "tierLevel": 6, "maxStage": 6},
-			{"name": "Grand Celestial", "hasStages": true, "tierLevel": 7, "maxStage": 9}
+			{"name": "Dawnforged/Riftwalk", "hasStages": true, "tierLevel": 1, "maxStage": 9},
+			{"name": "Raven", "hasStages": true, "tierLevel": 2, "maxStage": 9},
+			{"name": "Storm Dragon/Exalted", "hasStages": true, "tierLevel": 3, "maxStage": 9},
+			{"name": "Aransu", "hasStages": true, "tierLevel": 4, "maxStage": 9},
+			{"name": "Skyforge/Shadowforge", "hasStages": true, "tierLevel": 5, "maxStage": 6},
+			{"name": "Grand Celestial", "hasStages": true, "tierLevel": 6, "maxStage": 9},
+			{"name": "Thornbreaker", "hasStages": true, "tierLevel": 7, "maxStage": 6}
 		],
 		"ring": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
@@ -33,14 +33,16 @@
 		],
 		"bracelet": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Tiger/Divine Dragon", "hasStages": true, "tierLevel": 1, "maxStage": 13},
-			{"name": "Starbreaker/Divinity", "hasStages": true, "tierLevel": 2, "maxStage": 13}
+			{"name": "Tiger/Divine Dragon/Phoenix", "hasStages": true, "tierLevel": 1, "maxStage": 13},
+			{"name": "Starbreaker/Divinity/Battalion", "hasStages": true, "tierLevel": 2, "maxStage": 13}
 		],
 		"belt": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
 			{"name": "Eternity", "hasStages": false, "tierLevel": 1},
 			{"name": "Skybreaker", "hasStages": true, "tierLevel": 2, "maxStage": 13},
-			{"name": "Horizon", "hasStages": true, "tierLevel": 3, "maxStage": 13}
+			{"name": "Horizon", "hasStages": true, "tierLevel": 3, "maxStage": 13},
+			{"name": "Conflux", "hasStages": true, "tierLevel": 4, "maxStage": 13},
+			{"name": "Impetus", "hasStages": true, "tierLevel": 5, "maxStage": 13}
 		],
 		"gloves": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
@@ -49,7 +51,7 @@
 		],
 		"soul": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Hongmoon", "hasStages": true, "tierLevel": 1, "maxStage": 10},
+			{"name": "Hongmoon", "hasStages": true, "tierLevel": 1, "maxStage": 5},
 			{"name": "Awakened Ascending/Awakened Hongmoon", "hasStages": false, "tierLevel": 2},
 			{"name": "True Ascending/True Hongmoon", "hasStages": false, "tierLevel": 3},
 			{"name": "Cosmic/Transcendent", "hasStages": true, "tierLevel": 4, "maxStage": 5},
@@ -57,7 +59,10 @@
 			{"name": "True Cosmic/True Transcendent", "hasStages": false, "tierLevel": 6},
 			{"name": "Tiger/Dragon", "hasStages": true, "tierLevel": 7, "maxStage": 5},
 			{"name": "Awakened Tiger/Awakened Dragon", "hasStages": true, "tierLevel": 8, "maxStage": 3},
-			{"name": "True Tiger/True Dragon", "hasStages": false, "tierLevel": 9}
+			{"name": "True Tiger/True Dragon", "hasStages": false, "tierLevel": 9},
+			{"name": "Brightwill/Everspark", "hasStages": true, "maxStage": 5, "tierLevel": 10},
+			{"name": "Awakened Brightwill/Awakened Everspark", "hasStages": true, "maxStage": 3, "tierLevel": 11},
+			{"name": "True Brightwill/True Everspark", "hasStages": false, "tierLevel": 12}
 		],
 		"heart": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
@@ -85,12 +90,12 @@
 		],
 		"soulBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Fused", "fullName": "Ancestral/Undying/Legacy/Eon/Limitless/Invincible/Arcana/Colossus/Wildborne/War Song", "hasStages": true, "tierLevel": 1, "maxStage": 8}
+			{"name": "Fused", "fullName": "Ancestral/Undying/Legacy/Eon/Limitless/Invincible/Arcana/Colossus/Wildborne/War Song/Exemplar/Impulse/Intrepid/Rampart/Stoic", "hasStages": true, "tierLevel": 1, "maxStage": 8}
 		],
 		"mysticBadge": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
-			{"name": "Dynasty/Aransu", "hasStages": true, "tierLevel": 1, "maxStage": 8},
-			{"name": "Thornbreaker/Groundbreaker", "hasStages": true, "tierLevel": 2, "maxStage": 8}
+			{"name": "Dynasty/Aransu/Oscillation", "hasStages": true, "tierLevel": 1, "maxStage": 8},
+			{"name": "Thornbreaker/Groundbreaker/Escalation", "hasStages": true, "tierLevel": 2, "maxStage": 8}
 		],
 		"nova": [
 			{"name": "Any", "hasStages": false, "tierLevel": 0},
